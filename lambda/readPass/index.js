@@ -84,10 +84,10 @@ exports.handler = async (event, context) => {
         );
       }
       // Filter reservation number
-      if (event.queryStringParameters.reservationNumber) {
+      if (event.queryStringParameters.registrationNumber) {
         queryObj.ExpressionAttributeValues[':registrationNumber'] = AWS.DynamoDB.Converter.input(
           // BRS-748 will address inconsistent mapping of registrationNumber to reservationNumber
-          event.queryStringParameters.reservationNumber
+          event.queryStringParameters.registrationNumber
         );
         queryObj.FilterExpression += expressionBuilder(
           'AND',

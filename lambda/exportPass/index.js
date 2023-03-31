@@ -54,8 +54,8 @@ exports.handler = async (event, context) => {
         queryObj.FilterExpression += ' AND #theStatus IN (' + Object.keys(statusObj).toString() + ')';
       }
       // Filter reservation number
-      if (event.queryStringParameters.reservationNumber) {
-        queryObj.ExpressionAttributeValues[':sk'] = { S: event.queryStringParameters.reservationNumber };
+      if (event.queryStringParameters.registrationNumber) {
+        queryObj.ExpressionAttributeValues[':sk'] = { S: event.queryStringParameters.registrationNumber };
         queryObj.KeyConditionExpression += ' AND sk =:sk';
       }
       // Filter first/last

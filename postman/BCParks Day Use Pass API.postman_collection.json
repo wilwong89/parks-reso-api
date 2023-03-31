@@ -51,7 +51,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}pass?park=0363&facilityName=Joffre Lakes&type=DAY&reservationNumber=71080166",
+							"raw": "{{base_url}}pass?park=0363&facilityName=Joffre Lakes&type=DAY&registrationNumber=71080166",
 							"host": [
 								"{{base_url}}pass"
 							],
@@ -84,7 +84,7 @@
 									"disabled": true
 								},
 								{
-									"key": "reservationNumber",
+									"key": "registrationNumber",
 									"value": "71080166",
 									"description": "(optional) Pass reservation number (unique ID). For getting a single pass. Must provide `park` and `facilityName`."
 								},
