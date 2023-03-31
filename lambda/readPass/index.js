@@ -57,9 +57,9 @@ exports.handler = async (event, context) => {
         queryObj.FilterExpression = 'facilityName =:facilityName';
       }
 
-      if (event.queryStringParameters.passType) {
+      if (event.queryStringParameters.type) {
         queryObj.ExpressionAttributeValues[':passType'] = AWS.DynamoDB.Converter.input(
-          event.queryStringParameters.passType
+          event.queryStringParameters.type
         );
         queryObj = checkAddExpressionAttributeNames(queryObj);
         queryObj.ExpressionAttributeNames['#theType'] = 'type';
