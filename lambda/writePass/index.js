@@ -11,7 +11,7 @@ const { sendSQSMessage } = require('../sqsUtils')
 
 // default opening/closing hours in 24h time
 const DEFAULT_AM_OPENING_HOUR = 7;
-const DEFAULT_PM_OPENING_HOUR = 12;
+const DEFAULT_PM_OPENING_HOUR = 13;
 
 async function modifyPassCheckInStatus(pk, sk, checkedIn) {
   let updateParams = {
@@ -192,7 +192,7 @@ exports.handler = async (event, context) => {
 
     const currentPSTDateTime = DateTime.now().setZone(TIMEZONE);
     const bookingPSTDateTime = DateTime.fromISO(date).setZone(TIMEZONE).set({
-      hour: 12,
+      hour: 13,
       minutes: 0,
       seconds: 0,
       milliseconds: 0
